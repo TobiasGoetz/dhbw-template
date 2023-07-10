@@ -1,0 +1,142 @@
+\RequirePackage[l2tabu, orthodox]{nag} % Warn about outdated packages and commands
+
+\input{settings/packages}
+
+\newcommand{\setting}[1]{%
+    \expandafter\newcommand\csname my#1\endcsname{}
+    \expandafter\newcommand\csname setmy#1\endcsname[1]{\expandafter\renewcommand\csname my#1\endcsname{##1}}
+}
+\newcommand{\langstr}[1]{\setting{lang#1}}
+
+\input{settings/settings-list} % Create the settings commands
+\input{settings/settings} % Load the settings values
+\input{lang/strings} % Load the strings
+\input{lang/\mylanguage} % Load the language specific strings
+
+% Define if-includes. Default: false
+\newif\ifincludeAuthorship\includeAuthorshipfalse
+%\newif\ifincludeSignaturePage\includeSignaturePagefalse %TODO
+\newif\ifincludeAbstract\includeAbstractfalse
+\newif\ifincludeTableOfContents\includeTableOfContentsfalse
+\newif\ifbothAbstracts\bothAbstractsfalse
+\newif\ifincludeListOfAbbreviations\includeListOfAbbreviationsfalse
+\newif\ifincludeListOfFigures\includeListOfFiguresfalse
+\newif\ifincludeListOfFormulas\includeListOfFormulasfalse
+\newif\ifincludeListOfListings\includeListOfListingsfalse
+\newif\ifincludeListOfTables\includeListOfTablesfalse
+\newif\ifrestrictionNotice\restrictionNoticefalse
+\newif\ifincludeBibliography\includeBibliographyfalse
+\newif\ifincludeGlossary\includeGlossaryfalse
+\newif\ifincludeReview\includeReviewfalse
+\newif\ifincludeAppendix\includeAppendixfalse
+
+\include{settings/colors}
+
+%% Code highlighting
+\newcommand{\listingsettings}{%
+    \lstset{%
+        language=Java,
+    %numbers=left,
+    %stepnumber=1,
+    %numbersep=5pt,
+    %numberstyle=\tiny,
+        breaklines=true,
+        breakautoindent=true,
+        postbreak=\space,
+        tabsize=2,
+        basicstyle=\ttfamily\footnotesize,
+        showspaces=false,
+        showstringspaces=false,
+        extendedchars=true,
+        captionpos=b,
+        backgroundcolor=\color{ListingBackground},
+        xleftmargin=0pt,
+        xrightmargin=0pt,
+        frame=single,
+        frameround=ffff,
+        rulecolor=\color{darkgray},
+    %fillcolor=\color{ListingBackground},
+        keywordstyle=\color[rgb]{0.133,0.133,0.6},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        aboveskip=1.5em,
+    }
+}
+
+\islang{de}{
+    \selectlanguage{ngerman}
+}
+\islang{en}{
+    \selectlanguage{english}
+}
+
+\usepackage[%
+    pdftitle={\mytitel},
+    pdfauthor={\myauthor},
+    pdfsubject={\mythesis},
+    pdfcreator={pdflatex, LaTeX with KOMA-Script},
+    pdfpagemode=UseOutlines,
+    pdfdisplaydoctitle=true,
+    pdflang={\mylanguage},
+]{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=LinkColor,
+    filecolor=LinkColor,
+    menucolor=LinkColor,
+    urlcolor=LinkColor,
+%linktocpage=true,
+    linktoc=all,
+    bookmarksnumbered=true,
+}
+
+\usepackage[
+    backend=bibtex,     % Recommended. Use bibtex if biber causes issues.
+    bibwarn=true,
+    bibencoding=utf8,   % Use utf8 if .bib file is in utf8, otherwise use ascii.
+    style=\mycitationStyle,
+    sorting=none,
+]{biblatex}
+
+\islang{de}{
+    \DeclareOption{de}{
+        \ExecuteBibliographyOptions{
+            sortlocale=de_DE,
+        }
+    }
+}
+\islang{en}{
+    \DeclareOption{en}{
+        \ExecuteBibliographyOptions{
+            sortlocale=en_US,
+        }
+    }
+}
+
+\ProcessOptions\relax
+%\loadbibresources
+\foreach \bibfile in {literature/*.bib} {
+  \addbibresource{\bibfile}
+}
+
+% Prevent widow and orphan lines
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty=10000
+
+% Prevent breaking URLs apart
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+\graphicspath{{images/}}
+
+%\lstloadlanguages{Python,Java,C,C++,bash} % TODO remove
+
+%% Spacing in tables TODO remove
+%\setlength{\tabcolsep}{\spaltenabstand}
+%\renewcommand{\arraystretch}{\zeilenabstand}
+
+\islang{de}{\usepackage{icomma}}

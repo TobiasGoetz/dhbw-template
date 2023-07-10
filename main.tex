@@ -1,0 +1,25 @@
+% The main file you want to compile
+
+\documentclass[
+    pdftex,
+    a4paper,
+    oneside,
+    12pt,
+    parskip=half,
+    DIV=calc,
+    headsepline,
+    footsepline,
+    headinclude=false,
+    footinclude=false,
+    listof=totoc,
+    bibliography=totoc,
+%    BCOR=8mm,
+% TODO Zeilanabstand 1,5
+]{scrreprt}
+\usepackage{tracklang}
+
+\input{settings/document-settings}
+
+\begin{document}
+    \input{pages/cover}
+\end{document}
