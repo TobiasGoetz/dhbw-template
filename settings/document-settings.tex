@@ -6,19 +6,23 @@
     \expandafter\newcommand\csname my#1\endcsname{}
     \expandafter\newcommand\csname setmy#1\endcsname[1]{\expandafter\renewcommand\csname my#1\endcsname{##1}}
 }
-\newcommand{\langstr}[1]{\setting{lang#1}}
+\newcommand{\langstr}[1]{
+    \expandafter\newcommand\csname lang#1\endcsname{}
+    \expandafter\newcommand\csname setlang#1\endcsname[1]{\expandafter\renewcommand\csname lang#1\endcsname{##1}}
+}
 
 \input{settings/settings-list} % Create the settings commands
 \input{settings/settings} % Load the settings values
 \input{lang/strings} % Load the strings
 \input{lang/\mylanguage} % Load the language specific strings
+\input{pages/glossary} % Load the glossary definitionss
 
 % Define if-includes. Default: false
 \newif\ifincludeAuthorship\includeAuthorshipfalse
 %\newif\ifincludeSignaturePage\includeSignaturePagefalse %TODO
 \newif\ifincludeAbstract\includeAbstractfalse
 \newif\ifincludeTableOfContents\includeTableOfContentsfalse
-\newif\ifbothAbstracts\bothAbstractsfalse
+%\newif\ifbothAbstracts\bothAbstractsfalse %TODO
 \newif\ifincludeListOfAbbreviations\includeListOfAbbreviationsfalse
 \newif\ifincludeListOfFigures\includeListOfFiguresfalse
 \newif\ifincludeListOfFormulas\includeListOfFormulasfalse
@@ -70,16 +74,6 @@
     \selectlanguage{english}
 }
 
-\usepackage[%
-    pdftitle={\mytitel},
-    pdfauthor={\myauthor},
-    pdfsubject={\mythesis},
-    pdfcreator={pdflatex, LaTeX with KOMA-Script},
-    pdfpagemode=UseOutlines,
-    pdfdisplaydoctitle=true,
-    pdflang={\mylanguage},
-]{hyperref}
-
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -91,14 +85,6 @@
     linktoc=all,
     bookmarksnumbered=true,
 }
-
-\usepackage[
-    backend=bibtex,     % Recommended. Use bibtex if biber causes issues.
-    bibwarn=true,
-    bibencoding=utf8,   % Use utf8 if .bib file is in utf8, otherwise use ascii.
-    style=\mycitationStyle,
-    sorting=none,
-]{biblatex}
 
 \islang{de}{
     \DeclareOption{de}{
@@ -116,6 +102,7 @@
 }
 
 \ProcessOptions\relax
+
 %\loadbibresources
 \foreach \bibfile in {literature/*.bib} {
   \addbibresource{\bibfile}

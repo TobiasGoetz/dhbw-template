@@ -1,11 +1,46 @@
-\usepackage[utf8]{inputenc}
+\usepackage[
+    pdftitle={\mytitel},
+    pdfauthor={\myauthor},
+    pdfsubject={\mythesis},
+    pdfcreator={pdflatex, LaTeX with KOMA-Script},
+    pdfpagemode=UseOutlines,
+    pdfdisplaydoctitle=true,
+    pdflang={\mylanguage},
+]{hyperref}
 
 \usepackage{xstring} % String manipulation
 
-% Language
+% Font and Layout
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{\myfont}
+\usepackage[margin=2.5cm,foot=1cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[activate]{microtype} % Better line breaks and typography
+\usepackage{float} % H-Option for figures
+\usepackage{wrapfig} % Wrap text around figures
+%\usepackage[perpage, hang, multiple, stable]{footmisc} % Multiple footnotes at one point TODO check if needed
+\usepackage{fancyhdr} % Header and footer
+
+% Language
 \usepackage[english, ngerman]{babel}
 \usepackage[official]{eurosym}
+
+% Quotes, Acronyms, Comments
+\usepackage[
+    backend=bibtex,     % Recommended. Use bibtex if biber causes issues.
+    bibwarn=true,
+    bibencoding=utf8,   % Use utf8 if .bib file is in utf8, otherwise use ascii.
+    style=\mycitationStyle,
+    sorting=none,
+]{biblatex}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{acronym}
+\usepackage{comment} % En-/Disablable comments
+
+% Glossary
+\usepackage[toc]{glossaries}
+%\usepackage{makeidx} % TODO used for glossary somehow probably
 
 % Math
 \usepackage{amsmath}
@@ -15,39 +50,36 @@
 % Tables
 \usepackage{color, colortbl}
 
-\usepackage{pdfpages} % Include PDFs
-
-
-% DEBUG TODO select which are useful
+% Graphics
 \usepackage{tikz}
-\usepackage{xcolor}
-\usepackage[margin=2.5cm,foot=1cm,top=3cm,bottom=3cm]{geometry}	% Seitenränder und Abstände
-\usepackage[activate]{microtype} %Zeilenumbruch und mehr
-\usepackage[onehalfspacing]{setspace}
-\usepackage{makeidx}
-\usepackage[autostyle=true,german=quotes]{csquotes}
-\usepackage{longtable}
-\usepackage{enumitem}	% mehr Optionen bei Aufzählungen
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{array}
-\usepackage{calc}		% zum Rechnen (Bildtabelle in Deckblatt)
-\usepackage{wrapfig}
-\usepackage{pgffor}     % für automatische Kapiteldateieinbindung
-\usepackage[perpage, hang, multiple, stable]{footmisc} % Fussnoten
-\usepackage{acronym}
+\usepackage{graphicx} % TODO should be loaded by tikz already
+\usepackage{subfig} % Multiple figures in one figure
+
+% Absolute placement (used in e.g. title page)
+\usepackage{eso-pic} % place pictures at absolute positions TODO check if used
 \usepackage[absolute]{textpos}
-\usepackage{scrhack} % in Kombination mit listings-Package kommt es zu Warnings, dieses Paket verhindert die Warnings! Ggf. auskommentieren und die Warnings akzeptieren falls Verzeichnisse nicht so dargestellt werden wie gewünscht
-\usepackage{listings} % Code-Listings
-\usepackage[framed]{matlab-prettifier} % .sty-Datei muss vorhanden sein! Kann auskommentiert werden, falls keine Matlab-Listings in der Arbeit enthalten sind.
-\usepackage{comment}
-\usepackage{\schriftart}
-\usepackage{bookmark}
-\usepackage{caption}
-\usepackage{subfig}
-\usepackage[nonumberlist,toc]{glossaries}
+
+% Colors
+\usepackage{xcolor}
+
+% Enumerations, Tables, Source Code
+\usepackage{enumitem} % Better enumerations
+\usepackage{listings} % Source code listings
+\usepackage{array} % Better tables
+\usepackage{longtable} % Tables over multiple pages
+
+% Misc
+\usepackage{caption} % Captions for figures
+\usepackage{calc} % Advanced calculations in LaTeX
+%\usepackage{bookmark} % Bookmarks in PDF TODO check if needed
+\usepackage{pdfpages} % Include PDFs
+%\usepackage{xspace} % Smart spaces
+%\usepackage{relsize} % Relative font sizes (smaller[i], larger[i], ...)
+\usepackage{pgffor} % For loops
+%\usepackage{lastpage} %TODO might use for page numbering total pages
+%\usepackage{iftex} %TODO might be used to assur epdflatex is used
+%\usepackage{scrhack} % in Kombination mit listings-Package kommt es zu Warnings, dieses Paket verhindert die Warnings! Ggf. auskommentieren und die Warnings akzeptieren falls Verzeichnisse nicht so dargestellt werden wie gewünscht TODO might be used to fix warnings
+
+% Testing
 \usepackage{blindtext}
-\usepackage{xspace}
-\usepackage{relsize}
 \usepackage{censor}
-\usepackage{eso-pic}
