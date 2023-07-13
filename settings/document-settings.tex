@@ -1,7 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag} % Warn about outdated packages and commands
 
-\input{settings/packages}
-
 \newcommand{\setting}[1]{%
     \expandafter\newcommand\csname my#1\endcsname{}
     \expandafter\newcommand\csname setmy#1\endcsname[1]{\expandafter\renewcommand\csname my#1\endcsname{##1}}
@@ -13,6 +11,7 @@
 
 \input{settings/settings-list} % Create the settings commands
 \input{settings/settings} % Load the settings values
+\input{settings/packages} % Load the packages
 \input{lang/strings} % Load the strings
 \input{lang/\mylanguage} % Load the language specific strings
 \input{pages/glossary} % Load the glossary definitionss
@@ -105,7 +104,7 @@
 
 %\loadbibresources
 \foreach \bibfile in {literature/*.bib} {
-  \addbibresource{\bibfile}
+    \addbibresource{\bibfile}
 }
 
 % Prevent widow and orphan lines

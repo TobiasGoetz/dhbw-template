@@ -1,0 +1,32 @@
+% Defining page styles
+\fancypagestyle{common}{
+    \fancyhf{}
+}
+
+\fancypagestyle{preliminary}{
+    \pagestyle{common}
+}
+
+\fancypagestyle{main}{
+    \pagestyle{common}
+    \fancyhead[L]{\nouppercase{\rightmark}}
+}
+
+\fancypagestyle{appendix}{
+    \pagestyle{common}
+}
+
+
+% Preliminary pages
+\pagestyle{preliminary}
+\pagenumbering{Roman}
+
+\input{pages/cover}
+
+% Main pages
+\pagestyle{main}
+\pagenumbering{arabic}
+
+% Appendix
+\pagestyle{appendix}
+\pagenumbering{Alph}
