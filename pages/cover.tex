@@ -1,5 +1,40 @@
 \begin{titlepage}
-    \begin{center}
+    \begin{minipage}[t][2.5cm]{0.5\linewidth}
+        \raggedright
+        \includegraphics[height=2.5cm]{company}
+    \end{minipage}
+    \begin{minipage}[t][2.5cm]{0.5\linewidth}
+        \raggedleft
+        \includegraphics[height=2.5cm]{dhbw}
+    \end{minipage}
 
+    \enlargethispage{20mm}
+
+    \begin{center}
+        \begin{spacing}{2,5}
+            \vspace*{12mm}    {\huge\textbf \mytitle }\\
+            \vspace*{5mm}
+        \end{spacing}
+        \vspace{-1.4cm}
+
+        \vspace*{12mm}    {\LARGE\textbf \mythesis }\\
+
+        \vspace*{2mm}    \myphase\\
+        \vspace*{10mm}    from the Course of Studies \mycourse\\
+        \vspace*{5mm}    at the Cooperative State University Baden-Württemberg \mydhbw\\Campus \mycampus\\
+        \vspace*{12mm}    by\\
+        \vspace*{5mm}    {\large\textbf \myauthor}\\
+        \vspace*{10mm}    \mysubmissionDate\\
     \end{center}
+
+    \vfill
+    \begin{tabular}{ll}
+        Time of Project:              & \mystartDate-\mysubmissionDate    \\
+        Matriculation number, Course: & \mymatriculationNumber, \mycourse \\
+        Company:                      & \mycompany, \mycompanyLocation    \\
+        Supervisor:                   & \mysupervisor                     \\
+        \ifreviewer
+        Reviewer:                    & \myreviewer                       \\
+        \fi
+    \end{tabular}
 \end{titlepage}
