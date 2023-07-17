@@ -16,6 +16,14 @@
     \pagestyle{common}
 }
 
+% Setting language
+\islang{de}{
+    \selectlanguage{ngerman}
+}
+\islang{en}{
+    \selectlanguage{english}
+}
+
 % Cover page
 \input{pages/cover}
 
@@ -25,6 +33,7 @@
 
 \ifrestrictionNotice\input{pages/restrictionNotice}\fi
 \ifincludeAuthorship\input{pages/statementOfAuthorship}\fi
+\ifincludeAbstract\input{pages/abstract}\fi
 
 % Main pages
 \pagestyle{main}
