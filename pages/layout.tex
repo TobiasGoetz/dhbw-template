@@ -23,10 +23,8 @@
 \pagestyle{preliminary}
 \pagenumbering{Roman}
 
-\ifrestrictionNotice
-\input{pages/restrictionNotice}
-\newpage
-\fi
+\ifrestrictionNotice\input{pages/restrictionNotice}\fi
+\ifincludeAuthorship\input{pages/statementOfAuthorship}\fi
 
 % Main pages
 \pagestyle{main}
