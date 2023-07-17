@@ -9,14 +9,8 @@
     \expandafter\newcommand\csname setlang#1\endcsname[1]{\expandafter\renewcommand\csname lang#1\endcsname{##1}}
 }
 
-\input{settings/settings-list} % Create the settings commands
-\input{settings/settings} % Load the settings values
-\input{settings/packages} % Load the packages
-\input{lang/strings} % Load the strings
-\input{lang/\mylanguage} % Load the language specific strings
-\input{pages/glossary} % Load the glossary definitionss
-
 % Define if-includes. Default: false
+\newif\ifrestrictionNotice\restrictionNoticefalse
 \newif\ifincludeAuthorship\includeAuthorshipfalse
 %\newif\ifincludeSignaturePage\includeSignaturePagefalse %TODO
 \newif\ifincludeAbstract\includeAbstractfalse
@@ -27,12 +21,18 @@
 \newif\ifincludeListOfFormulas\includeListOfFormulasfalse
 \newif\ifincludeListOfListings\includeListOfListingsfalse
 \newif\ifincludeListOfTables\includeListOfTablesfalse
-\newif\ifrestrictionNotice\restrictionNoticefalse
 \newif\ifincludeBibliography\includeBibliographyfalse
 \newif\ifincludeGlossary\includeGlossaryfalse
 \newif\ifincludeReview\includeReviewfalse
 \newif\ifincludeAppendix\includeAppendixfalse
 \newif\ifreviewer\reviewerfalse
+
+\input{settings/settings-list} % Create the settings commands
+\input{settings/settings} % Load the settings values
+\input{settings/packages} % Load the packages
+\input{lang/strings} % Load the strings
+\input{lang/\mylanguage} % Load the language specific strings
+\input{pages/glossary} % Load the glossary definitionss
 
 \include{settings/colors}
 

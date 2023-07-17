@@ -16,12 +16,17 @@
     \pagestyle{common}
 }
 
+% Cover page
+\input{pages/cover}
 
 % Preliminary pages
 \pagestyle{preliminary}
 \pagenumbering{Roman}
 
-\input{pages/cover}
+\ifrestrictionNotice
+\input{pages/restrictionNotice}
+\newpage
+\fi
 
 % Main pages
 \pagestyle{main}
