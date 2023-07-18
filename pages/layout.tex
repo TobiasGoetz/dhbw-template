@@ -12,7 +12,7 @@
     \pagestyle{common}
     \pagenumbering{arabic}
     \fancyhead[L]{\nouppercase{\rightmark}}
-    \fancyfoot[C]{This is correct}
+    \fancyfoot[C]{\thepage}
 }
 
 \fancypagestyle{appendix}{
@@ -37,10 +37,11 @@
 \ifrestrictionNotice\input{pages/restrictionNotice}\fi
 \ifincludeAuthorship\input{pages/statementOfAuthorship}\fi
 \ifincludeAbstract\input{pages/abstract}\fi
+\tableofcontents\clearpage
+\ifincludeAcronyms\input{pages/acronyms}\fi
 
 % Main pages
 \pagestyle{main}
-\tableofcontents\clearpage
 
 % Appendix
 \pagestyle{appendix}
