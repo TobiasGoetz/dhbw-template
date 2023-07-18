@@ -5,15 +5,19 @@
 
 \fancypagestyle{preliminary}{
     \pagestyle{common}
+    \pagenumbering{Roman}
 }
 
 \fancypagestyle{main}{
     \pagestyle{common}
+    \pagenumbering{arabic}
     \fancyhead[L]{\nouppercase{\rightmark}}
+    \fancyfoot[C]{This is correct}
 }
 
 \fancypagestyle{appendix}{
     \pagestyle{common}
+    \pagenumbering{Alph}
 }
 
 % Setting language
@@ -29,7 +33,6 @@
 
 % Preliminary pages
 \pagestyle{preliminary}
-\pagenumbering{Roman}
 
 \ifrestrictionNotice\input{pages/restrictionNotice}\fi
 \ifincludeAuthorship\input{pages/statementOfAuthorship}\fi
@@ -37,8 +40,7 @@
 
 % Main pages
 \pagestyle{main}
-\pagenumbering{arabic}
+\tableofcontents\clearpage
 
 % Appendix
 \pagestyle{appendix}
-\pagenumbering{Alph}
