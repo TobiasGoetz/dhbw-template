@@ -1,0 +1,67 @@
+\chapter{Lorem Ipsum}\label{ch:lorem-ipsum}
+This is the first usage of an example acronym: \ac{dhbw}.\\
+This is the second usage of an example acronym: : \ac{dhbw}.\\
+This is the forced full display of the example acronym: \acf{dhbw}.
+
+% Include and caption an image
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=3cm]{dhbw}
+    \caption{Example caption}\label{fig:figure}
+\end{figure}
+
+
+% Table with a horizontal line above and below the top row
+\begin{table}[htbp]         % preferred position order (here, top, bottom, page)
+    \begin{tabular}{lcl}        % positioning of the individual columns (left, center, right)
+        \hline                  % horizontal line above the table
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\ \hline    % Strich unter erster Zeile; \textbf = fetter Text
+        lorem             & ipsum             & lorem ipsum       \\
+        ipsum             & lorem             & ipsum lorem
+    \end{tabular}
+    \label{tablename}
+    \caption{Example table, \cite{lorem}}
+\end{table}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. \cite{lorem}
+
+\newpage
+\begin{lstlisting}[caption=This is a listing,label=lst:code]
+while(working)
+{
+    coffee.drink();
+    work.execute();
+    if(coffee.isEmpty())
+    {
+        if(coffeePot.isEmpty())
+            coffeePot.brew();
+        coffee.refill();
+    }
+}
+Write('Textausgabe');
+\end{lstlisting}
+
+
+\begin{center}
+    2 $\ast$ 0,1 = 0,2 $\rightarrow$ Ziffer: 0 \\
+    2 $\ast$ 0,2 = 0,4 $\rightarrow$ Ziffer: 0 \\
+    2 $\ast$ 0,4 = 0,8 $\rightarrow$ Ziffer: 0 \\
+    2 $\ast$ 0,8 = 1,6 $\rightarrow$ Ziffer: 1 \\
+    2 $\ast$ 0,6 = 1,2 $\rightarrow$ Ziffer: 1 \\
+    2 $\ast$ 0,2 = 0,4 $\rightarrow$ Ziffer: 0 \\
+\end{center}
+
+
+\section{Lorem}
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+\subsection{ipsum}
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+
+\begin{itemize}
+    \item First bullet point
+    \item Second bullet point
+\end{itemize}
+
+

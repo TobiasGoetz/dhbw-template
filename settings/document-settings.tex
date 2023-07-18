@@ -13,18 +13,15 @@
 \newif\ifrestrictionNotice\restrictionNoticefalse
 \newif\ifincludeAuthorship\includeAuthorshipfalse
 \newif\ifincludeAbstract\includeAbstractfalse
-%\newif\ifincludeSignaturePage\includeSignaturePagefalse %TODO
-%\newif\ifincludeTableOfContents\includeTableOfContentsfalse %TODO
-%\newif\ifbothAbstracts\bothAbstractsfalse %TODO
 \newif\ifincludeAcronyms\includeAcronymsfalse
 \newif\ifincludeListOfFigures\includeListOfFiguresfalse
-\newif\ifincludeListOfFormulas\includeListOfFormulasfalse
-\newif\ifincludeListOfListings\includeListOfListingsfalse
 \newif\ifincludeListOfTables\includeListOfTablesfalse
-\newif\ifincludeBibliography\includeBibliographyfalse
-\newif\ifincludeGlossary\includeGlossaryfalse
-\newif\ifincludeReview\includeReviewfalse
+\newif\ifincludeListOfListings\includeListOfListingsfalse
 \newif\ifincludeAppendix\includeAppendixfalse
+\newif\ifincludeBibliography\includeBibliographyfalse
+
+%TODO remove unused
+\newif\ifincludeReview\includeReviewfalse
 \newif\ifreviewer\reviewerfalse
 
 \input{settings/settings-list} % Create the settings commands
@@ -32,7 +29,6 @@
 \input{settings/packages} % Load the packages
 \input{lang/strings} % Load the strings
 \input{lang/\mylanguage} % Load the language specific strings
-\input{pages/glossary} % Load the glossary definitionss
 
 \include{settings/colors}
 
@@ -98,7 +94,7 @@
 
 %\loadbibresources
 \foreach \bibfile in {literature/*.bib} {
-    \addbibresource{\bibfile}
+     \expandafter\addbibresource{\bibfile}
 }
 
 % Prevent widow and orphan lines
