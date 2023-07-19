@@ -34,10 +34,10 @@
 % Preliminary pages
 \pagestyle{preliminary}
 
-\ifrestrictionNotice\input{pages/restrictionNotice}\fi
-\ifincludeAuthorship\input{pages/statementOfAuthorship}\fi
-\ifincludeAbstract\input{pages/abstract}\fi
-\tableofcontents\clearpage
+\ifrestrictionNotice\include{pages/restrictionNotice}\cleardoublepage\fi
+\ifincludeAuthorship\include{pages/statementOfAuthorship}\cleardoublepage\fi
+\ifincludeAbstract\include{pages/abstract}\cleardoublepage\fi
+\tableofcontents\cleardoublepage
 \ifincludeAcronyms\input{pages/acronyms}\cleardoublepage\fi
 \ifincludeListOfFigures\listoffigures\cleardoublepage\fi
 \ifincludeListOfTables\listoftables\cleardoublepage\fi
@@ -46,13 +46,8 @@
 
 % Main pages
 \pagestyle{main}
-\foreach \i in {00,01,02,03,04,05,06,07,08,09,...,99} {
-    \edef\FileName{content/\i chapter}%
+\input{settings/chapters}
 
-    \IfFileExists{\FileName}{
-        \input{\FileName}
-    }
-}
 \clearpage
 
 % Appendix

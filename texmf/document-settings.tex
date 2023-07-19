@@ -24,13 +24,13 @@
 \newif\ifincludeReview\includeReviewfalse
 \newif\ifreviewer\reviewerfalse
 
-\input{settings/settings-list} % Create the settings commands
+\input{texmf/settings-list} % Create the settings commands
 \input{settings/settings} % Load the settings values
-\input{settings/packages} % Load the packages
+\input{texmf/packages} % Load the packages
 \input{lang/strings} % Load the strings
 \input{lang/\mylanguage} % Load the language specific strings
 
-\include{settings/colors}
+\include{texmf/colors}
 
 %% Code highlighting
 \newcommand{\listingsettings}{%
