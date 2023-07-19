@@ -20,7 +20,6 @@
 \usepackage{float} % H-Option for figures
 \usepackage{scrhack} % Fixes isssues with float and scrreprt(KOMA-Script) packages
 \usepackage{wrapfig} % Wrap text around figures
-%\usepackage[perpage, hang, multiple, stable]{footmisc} % Multiple footnotes at one point TODO check if needed
 \usepackage{fancyhdr} % Header and footer
 
 % Language
@@ -40,8 +39,7 @@
 
 % Glossary
 \usepackage{acronym}
-\usepackage[toc]{glossaries}
-%\usepackage{makeidx} % TODO used for glossary somehow probably
+\usepackage[toc]{glossaries} % Might need makeidx package
 
 % Math
 \usepackage{amsmath}
@@ -53,11 +51,11 @@
 
 % Graphics
 \usepackage{tikz}
-\usepackage{graphicx} % TODO should be loaded by tikz already
+\usepackage{graphicx} % should be loaded by tikz already
 \usepackage{subfig} % Multiple figures in one figure
 
 % Absolute placement (used in e.g. title page)
-\usepackage{eso-pic} % place pictures at absolute positions TODO check if used
+%\usepackage{eso-pic} % place pictures at absolute positions
 \usepackage[absolute]{textpos}
 
 % Colors
@@ -72,15 +70,13 @@
 % Misc
 \usepackage{caption} % Captions for figures
 \usepackage{calc} % Advanced calculations in LaTeX
-%\usepackage{bookmark} % Bookmarks in PDF TODO check if needed
+%\usepackage{bookmark} % Bookmarks in PDF
 \usepackage{pdfpages} % Include PDFs
 %\usepackage{xspace} % Smart spaces
-\usepackage{relsize} % Relative font sizes (smaller[i], larger[i], ...)
+%\usepackage{relsize} % Relative font sizes (smaller[i], larger[i], ...)
 \usepackage{pgffor} % For loops
-%\usepackage{lastpage} %TODO might use for page numbering total pages
-%\usepackage{iftex} %TODO might be used to assure pdflatex is used
 
 % Testing
 \usepackage{blindtext}
 \usepackage{censor}
-\usepackage{lipsum}
+\usepackage{lipsum} % Lorem ipsum
