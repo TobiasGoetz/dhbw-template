@@ -2,6 +2,10 @@
   \IfStrEq{\mylanguage}{#1}{#2}{}
 }
 
+\newcommand{\langstr}[1]{
+    \expandafter\newcommand\csname lang#1\endcsname{--placeholder--}
+}
+
 \langstr{fromthecourseofstudies}
 \langstr{atdhbw}
 \langstr{campus}
@@ -21,13 +25,3 @@
 \langstr{statementofauthorshiptext}
 
 \langstr{acronyms}
-
-%\langstr{coverpagetitle}
-%\langstr{programofstudyarticle}
-%\langstr{formulary}
-%\langstr{header}
-%\langstr{footer}
-%\langstr{page}
-%\langstr{ofpage}
-%\langstr{lastreview}
-%\langstr{symbolsglossary}

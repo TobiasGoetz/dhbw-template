@@ -1,10 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag} % Warn about outdated packages and commands
 
-\newcommand{\langstr}[1]{
-    \expandafter\newcommand\csname lang#1\endcsname{}
-    \expandafter\newcommand\csname setlang#1\endcsname[1]{\expandafter\renewcommand\csname lang#1\endcsname{##1}}
-}
-
 % Define if-includes. Default: false
 \newif\ifrestrictionNotice\restrictionNoticefalse
 \newif\ifincludeAuthorship\includeAuthorshipfalse
