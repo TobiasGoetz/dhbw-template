@@ -2,14 +2,14 @@
 
 %%% OPTION 1 %%%
 % Include all files in content/ that start with XXchapter where XX is a number from 00 to 99.
-\foreach \i in {00,01,...,99} {
-    \edef\FileName{content/\i chapter}%
-
-    \IfFileExists{\FileName}{
-        \include{\FileName}
-    }
-}
+%\foreach \i in {00,01,...,99} {
+%    \edef\FileName{content/\i chapter}%
+%
+%    \IfFileExists{\FileName}{
+%        \include{\FileName}
+%    }
+%}
 
 %%% OPTION 2 %%%
 % Include each file seperately (better package recognition by most IDEs)
-%\include{content/00chapter}
+\include{content/00chapter}

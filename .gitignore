@@ -302,6 +302,7 @@ TSWLatexianTemp*
 
 # Output files
 out/
+auxil/
 
 # IDE
 .idea/
