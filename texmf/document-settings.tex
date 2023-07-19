@@ -1,9 +1,5 @@
 \RequirePackage[l2tabu, orthodox]{nag} % Warn about outdated packages and commands
 
-\newcommand{\setting}[1]{%
-    \expandafter\newcommand\csname my#1\endcsname{}
-    \expandafter\newcommand\csname setmy#1\endcsname[1]{\expandafter\renewcommand\csname my#1\endcsname{##1}}
-}
 \newcommand{\langstr}[1]{
     \expandafter\newcommand\csname lang#1\endcsname{}
     \expandafter\newcommand\csname setlang#1\endcsname[1]{\expandafter\renewcommand\csname lang#1\endcsname{##1}}
@@ -24,13 +20,12 @@
 \newif\ifincludeReview\includeReviewfalse
 \newif\ifreviewer\reviewerfalse
 
-\input{texmf/settings-list} % Create the settings commands
-\input{settings/settings} % Load the settings values
+\input{settings/settings} % Load the settings
 \input{texmf/packages} % Load the packages
 \input{lang/strings} % Load the strings
 \input{lang/\mylanguage} % Load the language specific strings
 
-\include{texmf/colors}
+\input{texmf/colors}
 
 %% Code highlighting
 \newcommand{\listingsettings}{%
