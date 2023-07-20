@@ -1,0 +1,57 @@
+% Defining page styles
+\fancypagestyle{common}{
+    \fancyhf{}
+}
+
+\fancypagestyle{preliminary}{
+    \pagestyle{common}
+    \pagenumbering{Roman}
+}
+
+\fancypagestyle{main}{
+    \pagestyle{common}
+    \pagenumbering{arabic}
+    \fancyhead[L]{\nouppercase{\rightmark}}
+    \fancyfoot[C]{\thepage}
+}
+
+\fancypagestyle{appendix}{
+    \pagestyle{common}
+    \pagenumbering{Alph}
+}
+
+% Setting language
+\islang{de}{
+    \selectlanguage{ngerman}
+}
+\islang{en}{
+    \selectlanguage{english}
+}
+
+% Cover page
+\input{pages/cover}
+
+% Preliminary pages
+\pagestyle{preliminary}
+
+\ifrestrictionNotice\include{pages/restrictionNotice}\cleardoublepage\fi
+\ifincludeAuthorship\include{pages/statementOfAuthorship}\cleardoublepage\fi
+\ifincludeAbstract\include{pages/abstract}\cleardoublepage\fi
+\tableofcontents\cleardoublepage
+\ifincludeAcronyms\input{pages/acronyms}\cleardoublepage\fi
+\ifincludeListOfFigures\listoffigures\cleardoublepage\fi
+\ifincludeListOfTables\listoftables\cleardoublepage\fi
+\ifincludeListOfListings\lstlistoflistings\cleardoublepage\fi
+
+
+% Main pages
+\pagestyle{main}
+\input{config/chapters}
+
+\cleardoublepage
+\ifincludeBibliography\printbibliography\fi
+\cleardoublepage
+
+% Appendix
+\pagestyle{appendix}
+\ifincludeAppendix\input{pages/appendix}\fi

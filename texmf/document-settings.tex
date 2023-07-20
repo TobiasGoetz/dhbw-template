@@ -1,0 +1,97 @@
+\RequirePackage[l2tabu, orthodox]{nag} % Warn about outdated packages and commands
+
+% Define if-includes. Default: false
+\newif\ifrestrictionNotice\restrictionNoticefalse
+\newif\ifincludeAuthorship\includeAuthorshipfalse
+\newif\ifincludeAbstract\includeAbstractfalse
+\newif\ifincludeAcronyms\includeAcronymsfalse
+\newif\ifincludeListOfFigures\includeListOfFiguresfalse
+\newif\ifincludeListOfTables\includeListOfTablesfalse
+\newif\ifincludeListOfListings\includeListOfListingsfalse
+\newif\ifincludeAppendix\includeAppendixfalse
+\newif\ifincludeBibliography\includeBibliographyfalse
+
+\input{config/config} % Load the user config
+\input{texmf/packages} % Load the packages
+\input{lang/strings} % Load the strings
+\input{lang/\mylanguage} % Load the language specific strings
+
+\input{texmf/colors}
+
+%% Code highlighting
+\newcommand{\listingsettings}{%
+    \lstset{%
+        language=Java,
+    %numbers=left,
+    %stepnumber=1,
+    %numbersep=5pt,
+    %numberstyle=\tiny,
+        breaklines=true,
+        breakautoindent=true,
+        postbreak=\space,
+        tabsize=2,
+        basicstyle=\ttfamily\footnotesize,
+        showspaces=false,
+        showstringspaces=false,
+        extendedchars=true,
+        captionpos=b,
+        backgroundcolor=\color{ListingBackground},
+        xleftmargin=0pt,
+        xrightmargin=0pt,
+        frame=single,
+        frameround=ffff,
+        rulecolor=\color{darkgray},
+    %fillcolor=\color{ListingBackground},
+        keywordstyle=\color[rgb]{0.133,0.133,0.6},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        aboveskip=1.5em,
+    }
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=LinkColor,
+    filecolor=LinkColor,
+    menucolor=LinkColor,
+    urlcolor=LinkColor,
+%linktocpage=true,
+    linktoc=all,
+    bookmarksnumbered=true,
+}
+
+\islang{de}{
+    \DeclareOption{de}{
+        \ExecuteBibliographyOptions{
+            sortlocale=de_DE,
+        }
+    }
+}
+\islang{en}{
+    \DeclareOption{en}{
+        \ExecuteBibliographyOptions{
+            sortlocale=en_US,
+        }
+    }
+}
+
+\ProcessOptions\relax
+
+\loadbibresources
+
+% Prevent widow and orphan lines
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty=10000
+
+% Prevent breaking URLs apart
+\setcounter{biburlnumpenalty}{100}
+\setcounter{biburlucpenalty}{100}
+\setcounter{biburllcpenalty}{100}
+
+\graphicspath{{images/}}
+
+\lstloadlanguages{Python, Java, C, C++, bash}
+
+\islang{de}{\usepackage{icomma}}

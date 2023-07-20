@@ -1,0 +1,63 @@
+\chapter{Lorem Ipsum}\label{ch:lorem-ipsum}
+This is the first usage of an example acronym: \ac{dhbw}.\\
+This is the second usage of an example acronym: : \ac{dhbw}.\\
+This is the forced full display of the example acronym: \acf{dhbw}.
+
+% Include and caption an image
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=3cm]{images/dhbw}
+    \caption{Example caption}\label{fig:figure}
+\end{figure}
+
+
+% Table with a horizontal line above and below the top row
+\begin{table}[htbp]         % preferred position order (here, top, bottom, page)
+    \begin{tabular}{lcl}        % positioning of the individual columns (left, center, right)
+        \hline                  % horizontal line above the table
+        \textbf{Column 1} & \textbf{Column 2} & \textbf{Column 3} \\
+        \hline
+        lorem             & ipsum             & lorem ipsum       \\
+        ipsum             & lorem             & ipsum lorem
+    \end{tabular}~\caption{Example table, \cite{lorem}}
+    \label{tab:table1}
+\end{table}
+
+\textquote[\cite{lorem}]{\lipsum[1]}
+
+\begin{lstlisting}[caption=This is a code listing,label=lst:code]
+while(working)
+{
+    coffee.drink();
+    work.execute();
+    if(coffee.isEmpty())
+    {
+        if(coffeePot.isEmpty())
+            coffeePot.brew();
+        coffee.refill();
+    }
+}
+Write('Text output');
+\end{lstlisting}
+
+
+\begin{center}
+    2 $\ast$ 0,1 = 0,2 $\rightarrow$ Digit: 0 \\
+    2 $\ast$ 0,2 = 0,4 $\rightarrow$ Digit: 0 \\
+    2 $\ast$ 0,4 = 0,8 $\rightarrow$ Digit: 0 \\
+    2 $\ast$ 0,8 = 1,6 $\rightarrow$ Digit: 1 \\
+    2 $\ast$ 0,6 = 1,2 $\rightarrow$ Digit: 1 \\
+    2 $\ast$ 0,2 = 0,4 $\rightarrow$ Digit: 0 \\
+\end{center}
+
+
+\section{Lorem}
+\lipsum[1-2]
+
+\subsection{ipsum}
+\lipsum[1-2]
+
+\begin{itemize}
+    \item First bullet point
+    \item Second bullet point
+\end{itemize}

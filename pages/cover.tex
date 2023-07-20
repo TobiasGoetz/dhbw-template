@@ -1,0 +1,54 @@
+\begin{titlepage}
+    \begin{minipage}[t][2.5cm]{0.4\linewidth}
+        \raggedright
+        \includegraphics[height=2.5cm]{images/company}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t][2.5cm]{0.4\linewidth}
+        \raggedleft
+        \includegraphics[height=2.5cm]{images/dhbw}
+    \end{minipage}
+
+    \begin{center}
+        \vspace{0.5cm}
+        \begin{spacing}{2,5}
+        {\huge\textbf \mythesisTitle }
+            \\
+        \end{spacing}
+
+        \vspace*{15mm}
+        {\LARGE\textbf \mythesis }\\
+        \ifdefined\myphase
+        \myphase\\
+        \fi
+
+        \vspace*{10mm}
+        \langfromthecourseofstudies\ \mymajor\\
+
+        \vspace*{5mm}
+        \langatdhbw\ \mydhbw\\
+        \ifdefined\mycampus
+        \langcampus\ \mycampus\\
+        \fi
+
+        \vspace*{15mm}
+        \langby\\
+
+        \vspace*{5mm}
+        {\large\textbf \myauthor}\\
+
+        \vspace*{10mm}
+        \mysubmissionDate\\
+    \end{center}
+
+    \vfill
+    \begin{tabular}{ll}
+        \langduration:                         & \mystartDate-\mysubmissionDate              \\
+        \langmatriculationnumber, \langcourse: & \mymatriculationNumber, \myyearabbreviation \\
+        \langcompany:                          & \mycompany, \mycompanyLocation              \\
+        \langsupervisor:                       & \mysupervisor                               \\
+        \ifdefined\myreviewer
+        \langreviewer:                         & \myreviewer                                 \\
+        \fi
+    \end{tabular}
+\end{titlepage}

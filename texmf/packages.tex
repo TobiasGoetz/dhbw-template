@@ -1,0 +1,82 @@
+\usepackage[
+    pdftitle={\mythesisTitle},
+    pdfauthor={\myauthor},
+    pdfsubject={\mythesis},
+    pdfcreator={pdflatex, LaTeX with KOMA-Script},
+    pdfpagemode=UseOutlines,
+    pdfdisplaydoctitle=true,
+    pdflang={\mylanguage},
+]{hyperref}
+
+\usepackage{xstring} % String manipulation
+
+% Font and Layout
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,foot=1cm,top=3cm,bottom=3cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[activate]{microtype} % Better line breaks and typography
+\usepackage{float} % H-Option for figures
+\usepackage{scrhack} % Fixes isssues with float and scrreprt(KOMA-Script) packages
+\usepackage{wrapfig} % Wrap text around figures
+\usepackage{fancyhdr} % Header and footer
+
+% Language
+\usepackage[main=english, ngerman]{babel}
+\usepackage[official]{eurosym}
+
+% Quotes, Comments
+\usepackage[
+    backend=bibtex,     % Recommended. Use bibtex if biber causes issues.
+    bibwarn=true,
+    bibencoding=utf8,   % Use utf8 if .bib file is in utf8, otherwise use ascii.
+    style=\mycitationStyle,
+    sorting=none,
+]{biblatex}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage{comment} % En-/Disablable comments
+
+% Glossary
+\usepackage{acronym}
+\usepackage[toc]{glossaries} % Might need makeidx package
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+% Tables
+\usepackage{color, colortbl}
+
+% Graphics
+\usepackage{tikz}
+\usepackage{graphicx} % should be loaded by tikz already
+\usepackage{subfig} % Multiple figures in one figure
+
+% Absolute placement (used in e.g. title page)
+%\usepackage{eso-pic} % place pictures at absolute positions
+\usepackage[absolute]{textpos}
+
+% Colors
+\usepackage{xcolor}
+
+% Enumerations, Tables, Source Code
+\usepackage{enumitem} % Better enumerations
+\usepackage{listings} % Source code listings
+\usepackage{array} % Better tables
+\usepackage{longtable} % Tables over multiple pages
+
+% Misc
+\usepackage{caption} % Captions for figures
+\usepackage{calc} % Advanced calculations in LaTeX
+%\usepackage{bookmark} % Bookmarks in PDF
+\usepackage{pdfpages} % Include PDFs
+%\usepackage{xspace} % Smart spaces
+%\usepackage{relsize} % Relative font sizes (smaller[i], larger[i], ...)
+\usepackage{pgffor} % For loops
+
+% Testing
+\usepackage{blindtext}
+\usepackage{censor}
+\usepackage{lipsum} % Lorem ipsum
