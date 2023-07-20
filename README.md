@@ -1,9 +1,9 @@
 # DHBW-template
 ## Description
-This is a template usable for DHBW students. It contains everything you need to get started writing your thesis,
-be it T1000, T2000 or T3000, Bachelor or Master.
+This is a template usable for DHBW students.
+It contains everything you need to get started writing your T1000, T2000 or T3000, Bachelor's or Master’s thesis.
 
-Feel free to open an issue or contact me if you have any questions, suggestions or improvements.
+Feel free to [open an issue](https://github.com/TobiasGoetz/dhbw-template/issues/new/choose) or [contact me](mailto:dhbw-template@tobiasgoetz.com) if you have any questions, suggestions or improvements.
 
 ## Usage
 ### :clipboard: Prerequisites
