@@ -12,20 +12,24 @@
     \begin{center}
         \vspace{0.5cm}
         \begin{spacing}{2,5}
-        {\huge\textbf \mytitle }
+        {\huge\textbf \mythesisTitle }
             \\
         \end{spacing}
 
         \vspace*{15mm}
         {\LARGE\textbf \mythesis }\\
+        \ifdefined\myphase
         \myphase\\
+        \fi
 
         \vspace*{10mm}
-        \langfromthecourseofstudies\ \mycourse\\
+        \langfromthecourseofstudies\ \mymajor\\
 
         \vspace*{5mm}
         \langatdhbw\ \mydhbw\\
+        \ifdefined\mycampus
         \langcampus\ \mycampus\\
+        \fi
 
         \vspace*{15mm}
         \langby\\
@@ -39,12 +43,12 @@
 
     \vfill
     \begin{tabular}{ll}
-        \langduration:                         & \mystartDate-\mysubmissionDate    \\
-        \langmatriculationnumber, \langcourse: & \mymatriculationNumber, \mycourse \\
-        \langcompany:                          & \mycompany, \mycompanyLocation    \\
-        \langsupervisor:                       & \mysupervisor                     \\
+        \langduration:                         & \mystartDate-\mysubmissionDate              \\
+        \langmatriculationnumber, \langcourse: & \mymatriculationNumber, \myyearabbreviation \\
+        \langcompany:                          & \mycompany, \mycompanyLocation              \\
+        \langsupervisor:                       & \mysupervisor                               \\
         \ifdefined\myreviewer
-        \langreviewer:                         & \myreviewer                       \\
+        \langreviewer:                         & \myreviewer                                 \\
         \fi
     \end{tabular}
 \end{titlepage}
