@@ -48,9 +48,10 @@
 \pagestyle{main}
 \input{settings/chapters}
 
-\clearpage
+\cleardoublepage
+\ifincludeBibliography\printbibliography\fi
+\cleardoublepage
 
 % Appendix
 \pagestyle{appendix}
 \ifincludeAppendix\input{pages/appendix}\fi
-\ifincludeBibliography\printbibliography\fi
