@@ -94,4 +94,84 @@
 
 \lstloadlanguages{Python, Java, C, C++, bash}
 
+\lstdefinelanguage{yaml}{
+    basicstyle=\normalfont\ttfamily,
+    breaklines=true,
+    frame=single,
+    xleftmargin=2em,
+    linewidth=0.9\linewidth,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny,
+    showstringspaces=false,
+    aboveskip=1em,
+    belowskip=1em,
+    backgroundcolor=\color{gray!10},
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    literate={-}{-}1,
+    morecomment=[l]{\#},
+    morestring=[b]',
+    morestring=[b]"
+}
+
+\lstdefinelanguage{Groovy}{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    xleftmargin=2em,
+    linewidth=0.9\linewidth,
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny,
+    showstringspaces=false,
+    aboveskip=1em,
+    belowskip=1em,
+    backgroundcolor=\color{gray!10},
+    commentstyle=\color{green},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red},
+    keywords={
+        def, return, if, in, else, while, do, this, try, catch, finally, switch, case, default, break, continue,
+        throw, for, as, instanceof, new, abstract, assert, boolean, break, byte, case, catch, char, class, const,
+        continue, default, do, double, else, enum, extends, final, finally, float, for, goto, if, implements, import,
+        instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static,
+        strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while
+    },
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]'
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{white},
+    literate=
+    *{0}{{{\color{blue}0}}}{1}
+        {1}{{{\color{blue}1}}}{1}
+        {2}{{{\color{blue}2}}}{1}
+        {3}{{{\color{blue}3}}}{1}
+        {4}{{{\color{blue}4}}}{1}
+        {5}{{{\color{blue}5}}}{1}
+        {6}{{{\color{blue}6}}}{1}
+        {7}{{{\color{blue}7}}}{1}
+        {8}{{{\color{blue}8}}}{1}
+        {9}{{{\color{blue}9}}}{1}
+        {:}{{{\color{red}{:}}}}{1}
+        {,}{{{\color{red}{,}}}}{1}
+        {\{}{{{\color{darkgray}{\{}}}}{1}
+        {\}}{{{\color{darkgray}{\}}}}}{1}
+        {[}{{{\color{darkgray}{[}}}}{1}
+        {]}{{{\color{darkgray}{]}}}}{1},
+}
+
 \islang{de}{\usepackage{icomma}}
