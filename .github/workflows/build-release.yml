@@ -1,0 +1,28 @@
+name: Build and release PDF
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    container:
+      image: texlive/texlive:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        run: latexmk -interaction=nonstopmode -file-line-error
+
+      - name: Create release and upload PDF
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/main.pdf
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
