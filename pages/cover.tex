@@ -1,8 +1,10 @@
 \begin{titlepage}
+    \ifdefined\mycompany\ifdefined\mycompanyLocation
     \begin{minipage}[t][2.5cm]{0.4\linewidth}
         \raggedright
         \includegraphics[height=2.5cm]{images/company}
     \end{minipage}
+    \fi\fi
     \hfill
     \begin{minipage}[t][2.5cm]{0.4\linewidth}
         \raggedleft
@@ -45,8 +47,12 @@
     \begin{tabular}{ll}
         \langduration:                         & \mystartDate~-~\mysubmissionDate              \\
         \langmatriculationnumber, \langcourse: & \mymatriculationNumber, \myyearabbreviation \\
+        \ifdefined\mycompany\ifdefined\mycompanyLocation
         \langcompany:                          & \mycompany, \mycompanyLocation              \\
+        \fi\fi
+        \ifdefined\mysupervisor
         \langsupervisor:                       & \mysupervisor                               \\
+        \fi
         \ifdefined\myreviewer
         \langreviewer:                         & \myreviewer                                 \\
         \fi
