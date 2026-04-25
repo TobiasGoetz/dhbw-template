@@ -1,25 +1,19 @@
 # DHBW-template
-## Description
-This is a template usable for DHBW students.
-It contains everything you need to get started writing your T1000, T2000 or T3000, Bachelor's or Master’s thesis.
 
-Feel free to [open an issue](https://github.com/TobiasGoetz/dhbw-template/issues/new/choose) or [contact me](mailto:dhbw-template@tobiasgoetz.com) if you have any questions, suggestions or improvements.
+LaTeX template for DHBW papers and theses (T1000/T2000/T3000, Bachelor, Master).
 
-## Usage
-### :clipboard: Prerequisites
-- LaTeX distribution (e.g. [MikTeX](https://miktex.org/))
-- [Latexmk](https://mg.readthedocs.io/latexmk.html)
+## Quickstart
+- Edit `config/config.tex` (title, author, dates, language, included sections).
+- Put your logos/images in `images/` (keep `dhbw` and `company` filenames if you replace placeholders).
+- Write chapters in `content/` as `00chapter.tex`, `01chapter.tex`, ... (auto-included).
+- Add references to `bibliography/bibliography.bib`.
+- Build with:
 
-### :gear: Configuration
-- :gear: **Edit files in the `/config` folder** to your liking
-  - `config.tex` contains all the general settings
-  - `chapter.tex` is used to include your chapters, choose which inclusion style you prefer
-- :framed_picture: **Replace images** in the `/images` folder with your own, but make sure to keep the same file names
-- :writing_hand: **Write your chapters** in the `/content` folder
-- :books: **Add your bibliography** to `/bibliography/bibliography.bib`
-
-### :hammer: Build
-To build the document, run the following command in the root directory of the project:
 ```bash
 latexmk
 ```
+
+Build output is written to `out/` (PDF: `out/main.pdf`).
+
+## Releases
+Pushing a tag like `v1.0.0` triggers GitHub Actions to build and publish `out/main.pdf` as a release asset.
