@@ -1,23 +1,39 @@
+% Language
 \newcommand\mylanguage{en} % [en, de]
-\newcommand\mythesisTitle{Sample Thesis Title} % title of your thesis
-\newcommand\mymatriculationNumber{1234567} % your matriculation number
-\newcommand\mymajor{Sample Major} % Computer Science, Engineering, ...
-\newcommand\myyearabbreviation{ABC24} % e.g. TIM20, TIS21, ...
-\newcommand\mysemester{1} % 1, 2, 3, 4, 5, 6
-\newcommand\mystartDate{01.01.2026} % date you started your thesis
-\newcommand\mysubmissionDate{31.03.2026} % date you will submit your thesis
-\newcommand\mycompany{Sample Company} % company you work at
-\newcommand\mycompanyLocation{Sample City} % city of the company
-\newcommand\mysubmissionLocation{Sample City} % city you will submit your thesis
-%\newcommand\myphase{placeholder} % optional, can be used for T1000, T2000, T3000 and should say "about the practical phase of the first/second/third year of study"
-\newcommand\mystudyProgram{Sample Study Program} % e.g. Informatik, Wirtschaftsinformatik
-\newcommand\mydhbw{Sample Location} % Ravensburg, Karlsruhe, Heilbronn
-\newcommand\mycampus{Sample Campus} % optional, e.g. Friedrichshafen
-\newcommand\mysupervisor{Sample Supervisor} % your supervisor
-\newcommand\myreviewer{Sample Reviewer} % optional, your reviewer
+
+% Document
+\newcommand\mythesisTitle{Sample Thesis Title}
 \newcommand\mythesis{Bachelor Thesis} % T1000, T2000, T3000, Bachelor Thesis, Master Thesis
-\newcommand\myauthor{Sample Author} % your name
-\newcommand\myfocus{Sample Focus} % optional, e.g. Mobile Computer Science, IT-Security, ...
+%\newcommand\myphase{placeholder} % optional, e.g. practical phase of the first/second/third year of study
+
+% Author
+\newcommand\myauthor{Sample Author}
+\newcommand\mymatriculationNumber{1234567}
+\newcommand\myyearabbreviation{ABC24} % e.g. TIM20, TIS21, TMINF25-W
+\newcommand\mysemester{1} % 1, 2, 3, 4, 5, 6
+
+% Study program
+\newcommand\mymajor{Sample Major} % Computer Science, Engineering, ...
+\newcommand\myfocus{Sample Focus} % optional, comment out to hide, e.g. IT-Security
+
+% Institution
+\newcommand\mydhbw{Sample Location} % Ravensburg, Karlsruhe, Heilbronn, Center for Advanced Studies
+\newcommand\mycampus{Sample Campus} % optional, comment out to hide
+\newcommand\myuniversitylogo{images/dhbw} % university logo; replace file or path
+
+% Company (define both to show logo and cover line; comment out to hide)
+\newcommand\mycompany{Sample Company}
+\newcommand\mycompanyLocation{Sample City}
+\newcommand\mycompanylogo{images/company}
+
+% Supervision (optional, comment out to hide)
+\newcommand\mysupervisor{Sample Supervisor}
+\newcommand\myreviewer{Sample Reviewer}
+
+% Dates and places
+\newcommand\mystartDate{01.01.2026}
+\newcommand\mysubmissionDate{31.03.2026}
+\newcommand\mysubmissionLocation{Sample City}
 
 % Literature
 \newcommand\mycitationStyle{authoryear}
@@ -25,9 +41,10 @@
     \addbibresource{bibliography/bibliography.bib}
 }
 
-% Document
+% Included sections
 \restrictionNoticetrue
 \includeAuthorshiptrue
+\includeDigitalSubmissionfalse % Moodle/print correspondence clause (e.g. DHBW CAS)
 \includeAbstracttrue
 \includeAcronymstrue
 \includeListOfFigurestrue

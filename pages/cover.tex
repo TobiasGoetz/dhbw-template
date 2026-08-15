@@ -2,13 +2,13 @@
     \ifdefined\mycompany\ifdefined\mycompanyLocation
     \begin{minipage}[t][2.5cm]{0.4\linewidth}
         \raggedright
-        \includegraphics[height=2.5cm]{images/company}
+        \includegraphics[height=2.5cm]{\mycompanylogo}
     \end{minipage}
     \fi\fi
     \hfill
     \begin{minipage}[t][2.5cm]{0.4\linewidth}
         \raggedleft
-        \includegraphics[height=2.5cm]{images/dhbw}
+        \includegraphics[height=2.5cm]{\myuniversitylogo}
     \end{minipage}
 
     \begin{center}
@@ -26,6 +26,9 @@
 
         \vspace*{10mm}
         \langfromthecourseofstudies\ \mymajor\\
+        \ifdefined\myfocus
+        \myfocus\\
+        \fi
 
         \vspace*{5mm}
         \langatdhbw\ \mydhbw\\
