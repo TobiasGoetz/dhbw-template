@@ -11,7 +11,8 @@ Feel free to [open an issue](https://github.com/TobiasGoetz/dhbw-template/issues
 - [Latexmk](https://mg.readthedocs.io/latexmk.html)
 
 ### :gear: Configuration
-- :gear: **Edit `config/config.tex`**: author, title, dates, language, and toggles for which sections to include (authorship, abstract, acronyms, lists, appendix, bibliography). Comment out optional cover fields (company, campus, supervisor, reviewer, focus) to hide them.
+- :gear: **Edit `config/config.tex`**: author, title, dates, language, and toggles for which sections to include (authorship, AI usage disclosure, abstract, acronyms, lists, appendix, bibliography). Comment out optional cover fields (company, campus, supervisor, reviewer, focus) to hide them.
+- :robot: **Describe your AI use** in `pages/aiUsage.tex` (tools and extent). The surrounding wording follows the document language.
 - :framed_picture: **Put images** in the `images/` folder (e.g. `images/dhbw`, `images/company`), or change `\myuniversitylogo` / `\mycompanylogo` in the config.
 - :writing_hand: **Write your chapters** in `content/` as `00chapter.tex`, `01chapter.tex`, … (two-digit number + `chapter`). They are included automatically.
 - :books: **Add your bibliography** to `bibliography/bibliography.bib`.
